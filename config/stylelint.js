@@ -3,7 +3,6 @@ import { properties } from './stylelint-properties-order.js';
 /** @type {import('stylelint').Config} */
 export const stylelintConfig = {
 	extends: ['stylelint-config-standard'],
-	plugins: [`stylelint-order`],
 	overrides: [
 		{
 			customSyntax: 'postcss-scss',
@@ -26,9 +25,10 @@ export const stylelintConfig = {
 			},
 		},
 	],
+	plugins: [`stylelint-order`],
 	rules: {
-		'at-rule-empty-line-before': null,
 		'alpha-value-notation': 'number',
+		'at-rule-empty-line-before': null,
 		'at-rule-no-unknown': [
 			true,
 			{

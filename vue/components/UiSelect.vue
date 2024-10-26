@@ -1,34 +1,34 @@
 <script lang="ts" setup>
-import { computed } from 'vue';
 import MultiSelect from '@vueform/multiselect';
+import { computed } from 'vue';
 
 interface SelectProps extends MultiSelect {
-	/** Имя определяет наличие скрытого инпута */
-	name?: string;
-
 	/** Возможность мультивыбора */
 	multi?: boolean;
+
+	/** Имя определяет наличие скрытого инпута */
+	name?: string;
 }
 
 const props = withDefaults(defineProps<SelectProps>(), {
-	name: undefined,
-	mode: ({ multi, mode }) => (multi ? 'tags' : mode || 'single'),
-	nativeSupport: ({ name }) => Boolean(name),
 	classes: () => ({
-		container: 'ui-select',
-		wrapper: 'ui-select__wrapper',
-		singleLabel: 'ui-select__label',
-		singleLabelText: 'ui-select__label-text',
 		caret: 'ui-select__caret',
 		caretOpen: 'ui-select__caret--is-open',
+		container: 'ui-select',
 		dropdown: 'ui-select__dropdown',
-		dropdownTop: 'ui-select__dropdown--top',
 		dropdownHidden: 'ui-select__dropdown--hidden',
-		options: 'ui-select__options',
+		dropdownTop: 'ui-select__dropdown--top',
 		option: 'ui-select__option',
+		options: 'ui-select__options',
 		optionSelected: 'ui-select__option--selected',
 		optionSelectedPointed: 'ui-select__option--selected',
+		singleLabel: 'ui-select__label',
+		singleLabelText: 'ui-select__label-text',
+		wrapper: 'ui-select__wrapper',
 	}),
+	mode: ({ mode, multi }) => (multi ? 'tags' : mode || 'single'),
+	name: undefined,
+	nativeSupport: ({ name }) => Boolean(name),
 });
 const emit = defineEmits(['update:model-value']);
 

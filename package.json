@@ -1,6 +1,6 @@
 {
 	"name": "efiand-shared",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "A set of common modules (components, configurations, utilities) for any project.",
 	"type": "module",
 	"pre-commit": [
@@ -31,6 +31,8 @@
 		"@vue/tsconfig": "0.5.1",
 		"@vueform/multiselect": "2.6.10",
 		"autoprefixer": "10.4.20",
+		"eslint-gitignore": "0.1.0",
+		"eslint-plugin-perfectionist": "3.9.1",
 		"eslint-plugin-vue": "9.29.0",
 		"postcss-html": "1.7.0",
 		"postcss-scss": "4.0.9",

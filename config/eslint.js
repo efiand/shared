@@ -1,5 +1,7 @@
-import pluginVue from 'eslint-plugin-vue';
 import vueTsEslintConfig from '@vue/eslint-config-typescript';
+import { readGitignoreFiles } from 'eslint-gitignore';
+import perfectionist from 'eslint-plugin-perfectionist';
+import pluginVue from 'eslint-plugin-vue';
 
 /** @type {import('eslint').Linter.Config['rules']} */
 export const eslintSharedCustomRules = {
@@ -12,8 +14,8 @@ export const eslintSharedCustomRules = {
 		'error',
 		'kebab-case',
 		{
-			registeredComponentsOnly: false,
 			ignores: [],
+			registeredComponentsOnly: false,
 		},
 	],
 	'vue/html-indent': ['error', 'tab'],
@@ -26,10 +28,11 @@ export const eslintSharedCustomRules = {
 export const eslintConfigs = [
 	{
 		files: ['**/*.{js,ts,vue}'],
-		ignores: ['**/dist/**', '*.min.*'],
+		ignores: [...readGitignoreFiles(), '*.min.*'],
 	},
 	...pluginVue.configs['flat/strongly-recommended'],
 	...vueTsEslintConfig(),
+	perfectionist.configs['recommended-natural'],
 	{
 		plugins: {
 			vue: pluginVue,
