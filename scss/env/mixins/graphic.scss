@@ -1,6 +1,8 @@
+@use '../variables' as *;
+
 @mixin icons($icons) {
 	@each $icon in $icons {
-		--icon-#{$icon}: url('../../icons/#{$icon}.svg');
+		--icon-#{$icon}: url('../../../../../#{$icons-path}/#{$icon}.svg');
 	}
 }
 

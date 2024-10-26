@@ -2,7 +2,22 @@
 
 Набор общих модулей (компонентов, конфигураций, утилит) для любого проекта (Vanilla JS, Vue, Nuxt, Svelte).
 
-Разработка внутри внешнего приложения в режиме HMR:
+## Использование SVG-иконок в CSS
+
+```scss
+// @/assets/scss/global.scss
+
+@use 'efiand-shared/scss/base/global';
+
+$icons-path: 'src/icons'; // По умолчанию src/assets/icons, меняем при необходимости
+
+html {
+	// Добавится --icon-test, содержащая url() с интегрированной base64-иконкой
+	@include icons(('test'));
+}
+```
+
+## Разработка внутри внешнего приложения в режиме HMR
 
 ```js
 // vite.config.ts
