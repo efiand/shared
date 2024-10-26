@@ -26,10 +26,8 @@ export const eslintSharedCustomRules = {
 
 /** @type {import('eslint').Linter.Config[]} */
 export const eslintConfigs = [
-	{
-		files: ['**/*.{js,ts,vue}'],
-		ignores: [...readGitignoreFiles(), '*.min.*'],
-	},
+	{ files: ['**/*.{js,ts,vue}'] },
+	{ ignores: [...readGitignoreFiles(), '*.min.*'] },
 	...pluginVue.configs['flat/strongly-recommended'],
 	...vueTsEslintConfig(),
 	perfectionist.configs['recommended-natural'],
