@@ -1,0 +1,23 @@
+@mixin icons($icons) {
+	@each $icon in $icons {
+		--icon-#{$icon}: url('../../icons/#{$icon}.svg');
+	}
+}
+
+@mixin icon-modifiers($icons, $type: 'background') {
+	@each $icon in $icons {
+		&--#{$icon}::before {
+			@include icon($icon, $type);
+		}
+	}
+}
+
+@mixin icon($icon, $type: 'background') {
+	$value: var(--icon-#{$icon}) no-repeat center / 100%;
+
+	@if $type == 'mask' {
+		mask: $value;
+	} @else {
+		background: $value;
+	}
+}

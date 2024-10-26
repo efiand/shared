@@ -1,0 +1,15 @@
+$color-black: #000000;
+$color-white: #ffffff;
+
+$breakpoint-xs: 320px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1200px;
+
+$breakpoints: (
+	xs: 320px,
+	sm: 480px,
+	md: 768px,
+	lg: 1000px,
+	xl: 1280px,
+	xxl: 1921px,
+);

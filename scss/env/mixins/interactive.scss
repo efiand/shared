@@ -1,0 +1,42 @@
+@mixin prefers-animate {
+	@media (prefers-reduced-motion: no-preference) {
+		@content;
+	}
+}
+
+@mixin hover {
+	@media (hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+}
+
+@mixin hover-focus {
+	@media (hover: hover) {
+		&:hover,
+		&:focus {
+			@content;
+		}
+	}
+}
+
+@mixin plain-hover-focus {
+	@media (hover: hover) {
+		&,
+		&:hover,
+		&:focus {
+			@content;
+		}
+	}
+}
+
+@mixin hover-focus-active {
+	@media (hover: hover) {
+		&:hover,
+		&:focus,
+		&:active {
+			@content;
+		}
+	}
+}
