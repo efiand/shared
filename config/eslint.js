@@ -1,3 +1,4 @@
+import markdown from '@eslint/markdown';
 import vueTsEslintConfig from '@vue/eslint-config-typescript';
 import { readGitignoreFiles } from 'eslint-gitignore';
 import perfectionist from 'eslint-plugin-perfectionist';
@@ -31,6 +32,7 @@ export const eslintConfigs = [
 	...pluginVue.configs['flat/strongly-recommended'],
 	...vueTsEslintConfig(),
 	perfectionist.configs['recommended-natural'],
+	...markdown.configs.processor,
 	{
 		plugins: {
 			vue: pluginVue,
