@@ -1,21 +1,21 @@
 <template>
-	<div class="sh-select">
-		<label
-			class="sh-input__label"
-			v-if="$slots.default"
-			:for="id"
-			@click="control?.open"
-		>
-			<slot />
-		</label>
-		<multi-select
-			class="sh-select__control"
-			v-bind="props"
-			v-model="value"
-			ref="control"
-		/>
-		<div class="sh-select__error" v-if="error">{{ error }}</div>
-	</div>
+  <div class="sh-select">
+    <label
+      class="sh-input__label"
+      v-if="$slots.default"
+      :for="id"
+      @click="control?.open"
+    >
+      <slot />
+    </label>
+    <multi-select
+      class="sh-select__control"
+      v-bind="props"
+      v-model="value"
+      ref="control"
+    />
+    <div class="sh-select__error" v-if="error">{{ error }}</div>
+  </div>
 </template>
 
 <script lang="ts" setup>

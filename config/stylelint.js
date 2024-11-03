@@ -48,6 +48,10 @@ export const createStylelintConig = ({ useSorting = true } = {}) => {
       "color-function-notation": "legacy",
       "color-hex-length": "long",
       "custom-property-empty-line-before": null,
+      "declaration-block-no-redundant-longhand-properties": [
+        true,
+        { ignoreShorthands: ["grid-template"] },
+      ],
       "font-family-name-quotes": "always-unless-keyword",
       "import-notation": "string",
       "media-feature-range-notation": "prefix",

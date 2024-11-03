@@ -20,7 +20,7 @@ export const eslintSharedCustomRules = {
       registeredComponentsOnly: false,
     },
   ],
-  "vue/html-indent": ["error", "tab"],
+  "vue/html-indent": ["error", 2],
   "vue/html-self-closing": "off",
   "vue/max-attributes-per-line": "off",
   "vue/singleline-html-element-content-newline": "off",

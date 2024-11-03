@@ -1,23 +1,23 @@
 <template>
-	<div class="sh-checkbox">
-		<input
-			class="sh-checkbox__input"
-			:class="{ 'sh-checkbox__input--partial': modelValue === null }"
-			:id
-			:name
-			:type
-			:value
-			:checked="shouldBeChecked"
-			:autocomplete
-			:disabled
-			:required
-			@change="onChange"
-		/>
-		<label v-if="$slots.default" :for="id">
-			<slot />
-		</label>
-		<div class="sh-checkbox__error" v-if="error">{{ error }}</div>
-	</div>
+  <div class="sh-checkbox">
+    <input
+      class="sh-checkbox__input"
+      :class="{ 'sh-checkbox__input--partial': modelValue === null }"
+      :id
+      :name
+      :type
+      :value
+      :checked="shouldBeChecked"
+      :autocomplete
+      :disabled
+      :required
+      @change="onChange"
+    />
+    <label v-if="$slots.default" :for="id">
+      <slot />
+    </label>
+    <div class="sh-checkbox__error" v-if="error">{{ error }}</div>
+  </div>
 </template>
 
 <script lang="ts" setup>

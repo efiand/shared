@@ -1,35 +1,35 @@
 <template>
-	<div class="sh-input">
-		<label class="sh-input__label" v-if="$slots.default" :for="id">
-			<slot />
-		</label>
-		<div class="sh-input__control">
-			<input
-				:class="[
-					'sh-input__input',
-					`sh-input__input--${size}`,
-					{ 'sh-input__input--invalid': error },
-					{ 'sh-input__input--with-sign': $slots.sign },
-				]"
-				:id
-				:name
-				:type
-				v-model="maskedValue"
-				:placeholder
-				:autocomplete
-				:disabled
-				:required
-				v-maska:unmaskedValue.unmasked="mask"
-				@update:model-value="onUpdate"
-			/>
-			<span class="sh-input__sign" v-if="$slots.sign">
-				<slot name="sign" />
-			</span>
-		</div>
-		<span class="sh-input__error" v-if="error">
-			{{ error }}
-		</span>
-	</div>
+  <div class="sh-input">
+    <label class="sh-input__label" v-if="$slots.default" :for="id">
+      <slot />
+    </label>
+    <div class="sh-input__control">
+      <input
+        :class="[
+          'sh-input__input',
+          `sh-input__input--${size}`,
+          { 'sh-input__input--invalid': error },
+          { 'sh-input__input--with-sign': $slots.sign },
+        ]"
+        :id
+        :name
+        :type
+        v-model="maskedValue"
+        :placeholder
+        :autocomplete
+        :disabled
+        :required
+        v-maska:unmaskedValue.unmasked="mask"
+        @update:model-value="onUpdate"
+      />
+      <span class="sh-input__sign" v-if="$slots.sign">
+        <slot name="sign" />
+      </span>
+    </div>
+    <span class="sh-input__error" v-if="error">
+      {{ error }}
+    </span>
+  </div>
 </template>
 
 <script lang="ts" setup>

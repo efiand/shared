@@ -1,6 +1,6 @@
 {
   "name": "efiand-shared",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A set of common modules (components, configurations, utilities) for any project.",
   "type": "module",
   "pre-commit": [

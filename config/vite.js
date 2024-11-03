@@ -105,6 +105,11 @@ export const defineSharedStatic = (prefix = "") => {
 
 export const defineTwig = (data) => {
   return {
+    handleHotUpdate({ file, server }) {
+      if (extname(file) === ".twig") {
+        server.ws.send({ type: "full-reload" });
+      }
+    },
     name: "vite-twig",
     transformIndexHtml: {
       async handler(_html, ctx) {
