@@ -1,4 +1,8 @@
-import type { Config } from 'stylelint';
+import type { Config } from "stylelint";
 
 declare const stylelintConfig: Config;
-export { stylelintConfig };
+declare const createStylelintConfig: (options?: {
+  useSorting: boolean;
+}) => Config;
+
+export { createStylelintConfig, stylelintConfig };

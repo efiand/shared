@@ -1,40 +1,42 @@
+@use "interactive";
+
 @mixin font-face($family, $alias, $weights: 400, $styles: normal) {
-	@each $style in $styles {
-		@each $weight in $weights {
-			@font-face {
-				font-weight: $weight;
-				font-style: $style;
-				font-family: $family;
-				font-display: swap;
-				src: url('/fonts/#{$alias}-#{$style}-#{$weight}.woff2') format('woff2');
-			}
-		}
-	}
+  @each $style in $styles {
+    @each $weight in $weights {
+      @font-face {
+        font-weight: $weight;
+        font-style: $style;
+        font-family: $family;
+        font-display: swap;
+        src: url("/fonts/#{$alias}-#{$style}-#{$weight}.woff2") format("woff2");
+      }
+    }
+  }
 }
 
 @mixin scrollbar {
-	--color-ctx-primary: var(--color-scrollbar-primary, var(--color-primary));
-	--color-ctx-base: var(--color-scrollbar-base, var(--color-white));
+  --color-ctx-main: var(--color-scrollbar-main, var(--color-main));
+  --color-ctx-back: var(--color-scrollbar-back, var(--color-white));
 
-	overflow: clip auto;
-	scrollbar-color: var(--color-ctx-primary) var(--color-ctx-base);
-	scrollbar-width: thin;
-	-webkit-overflow-scrolling: touch;
+  overflow: clip auto;
+  scrollbar-color: var(--color-ctx-main) var(--color-ctx-back);
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
 
-	@include prefers-animate {
-		scroll-behavior: var(--scroll-behavior);
-	}
+  @include motion {
+    scroll-behavior: var(--scroll-behavior);
+  }
 
-	&::-webkit-scrollbar {
-		width: 2px;
-		background-color: var(--color-ctx-base);
-	}
+  &::-webkit-scrollbar {
+    width: 2px;
+    background-color: var(--color-ctx-back);
+  }
 
-	&::-webkit-scrollbar-thumb {
-		background-color: var(--color-ctx-primary);
-	}
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-ctx-main);
+  }
 
-	&::-webkit-scrollbar-track {
-		background-color: var(--color-ctx-base);
-	}
+  &::-webkit-scrollbar-track {
+    background-color: var(--color-ctx-back);
+  }
 }

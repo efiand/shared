@@ -1,42 +1,47 @@
-@mixin prefers-animate {
-	@media (prefers-reduced-motion: no-preference) {
-		@content;
-	}
+@mixin motion {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
 }
 
 @mixin hover {
-	@media (hover: hover) {
-		&:hover {
-			@content;
-		}
-	}
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
 }
 
 @mixin hover-focus {
-	@media (hover: hover) {
-		&:hover,
-		&:focus {
-			@content;
-		}
-	}
+  @include hover {
+    @content;
+  }
+
+  &:focus-visible {
+    @content;
+  }
 }
 
 @mixin plain-hover-focus {
-	@media (hover: hover) {
-		&,
-		&:hover,
-		&:focus {
-			@content;
-		}
-	}
+  @include hover {
+    @content;
+  }
+
+  &,
+  &:focus-visible {
+    @content;
+  }
 }
 
 @mixin hover-focus-active {
-	@media (hover: hover) {
-		&:hover,
-		&:focus,
-		&:active {
-			@content;
-		}
-	}
+  @media (hover: hover) {
+    &:hover,
+    &:active {
+      @content;
+    }
+  }
+
+  &:focus-visible {
+    @content;
+  }
 }

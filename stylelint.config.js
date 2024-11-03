@@ -1,3 +1,3 @@
-import { stylelintConfig } from './config/stylelint.js';
+import { stylelintConfig } from "./config/stylelint.js";
 
 export default stylelintConfig;

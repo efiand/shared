@@ -1,11 +1,11 @@
-import type { AcceptedPlugin } from 'postcss';
+import type { AcceptedPlugin } from "postcss";
 
 declare const postcssConfig: {
-	plugins?: readonly AcceptedPlugin[];
+  plugins?: readonly AcceptedPlugin[];
 };
 
 declare const postcssPlugins: {
-	[key: string]: unknown;
+  [key: string]: unknown;
 };
 
 export { postcssConfig, postcssPlugins };

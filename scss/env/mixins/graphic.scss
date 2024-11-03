@@ -1,25 +1,25 @@
-@use '../variables' as *;
+@use "../variables" as *;
 
-@mixin icons($icons) {
-	@each $icon in $icons {
-		--icon-#{$icon}: url('../../../../../#{$icons-path}/#{$icon}.svg');
-	}
+@mixin icons($icons, $path: "src/assets/icons") {
+  @each $icon in $icons {
+    --icon-#{$icon}: url("../../../../../../#{$path}/#{$icon}.svg");
+  }
 }
 
-@mixin icon-modifiers($icons, $type: 'background') {
-	@each $icon in $icons {
-		&--#{$icon}::before {
-			@include icon($icon, $type);
-		}
-	}
+@mixin icon-modifiers($icons, $type: "background") {
+  @each $icon in $icons {
+    &--#{$icon}::before {
+      @include icon($icon, $type);
+    }
+  }
 }
 
-@mixin icon($icon, $type: 'background') {
-	$value: var(--icon-#{$icon}) no-repeat center / 100%;
+@mixin icon($icon, $type: "background") {
+  $value: var(--icon-#{$icon}) no-repeat center / 100%;
 
-	@if $type == 'mask' {
-		mask: $value;
-	} @else {
-		background: $value;
-	}
+  @if $type == "mask" {
+    mask: $value;
+  } @else {
+    background: $value;
+  }
 }
