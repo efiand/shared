@@ -1,9 +1,9 @@
 <template>
   <div class="sh-checkbox">
     <input
+      :id
       class="sh-checkbox__input"
       :class="{ 'sh-checkbox__input--partial': modelValue === null }"
-      :id
       :name
       :type
       :value
@@ -16,7 +16,7 @@
     <label v-if="$slots.default" :for="id">
       <slot />
     </label>
-    <div class="sh-checkbox__error" v-if="error">{{ error }}</div>
+    <div v-if="error" class="sh-checkbox__error">{{ error }}</div>
   </div>
 </template>
 
@@ -100,8 +100,8 @@ const onChange = (event: Event) => {
   --control-color-border: var(--sh-checkbox-control-color-border, transparent);
 
   display: grid;
-  gap: var(--sh-checkbox-gap, 0.5rem);
   grid-template-columns: var(--size) 1fr;
+  gap: var(--sh-checkbox-gap, 0.5rem);
   transition: var(--transition);
   place-items: start start;
 

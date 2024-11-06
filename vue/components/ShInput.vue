@@ -1,32 +1,32 @@
 <template>
   <div class="sh-input">
-    <label class="sh-input__label" v-if="$slots.default" :for="id">
+    <label v-if="$slots.default" class="sh-input__label" :for="id">
       <slot />
     </label>
     <div class="sh-input__control">
       <input
+        :id
+        v-model="maskedValue"
+        v-maska:unmaskedValue.unmasked="mask"
         :class="[
           'sh-input__input',
           `sh-input__input--${size}`,
           { 'sh-input__input--invalid': error },
           { 'sh-input__input--with-sign': $slots.sign },
         ]"
-        :id
         :name
         :type
-        v-model="maskedValue"
         :placeholder
         :autocomplete
         :disabled
         :required
-        v-maska:unmaskedValue.unmasked="mask"
         @update:model-value="onUpdate"
       />
-      <span class="sh-input__sign" v-if="$slots.sign">
+      <span v-if="$slots.sign" class="sh-input__sign">
         <slot name="sign" />
       </span>
     </div>
-    <span class="sh-input__error" v-if="error">
+    <span v-if="error" class="sh-input__error">
       {{ error }}
     </span>
   </div>

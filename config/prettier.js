@@ -7,15 +7,19 @@ export const prettierConfig = {
       options: { parser: "vue" },
     },
     {
+      files: "*.svelte",
+      options: { parser: "svelte" },
+    },
+    {
       files: "*.{html,twig}",
       options: { parser: "liquid-html" },
     },
     {
-      files: ["{build,dist,public}/**", "*lock*"],
+      files: ["{.output,.svelte-kit,build,dist,public}/**", "*lock*"],
       options: { insertPragma: true },
     },
   ],
-  plugins: ["@destination/prettier-plugin-twig"],
+  plugins: ["@destination/prettier-plugin-twig", "prettier-plugin-svelte"],
   printWidth: 80,
   quoteProps: "consistent",
 };

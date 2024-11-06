@@ -106,7 +106,7 @@ export const defineSharedStatic = (prefix = "") => {
 export const defineTwig = (data) => {
   return {
     handleHotUpdate({ file, server }) {
-      if (extname(file) === ".twig") {
+      if (path.extname(file) === ".twig") {
         server.ws.send({ type: "full-reload" });
       }
     },
