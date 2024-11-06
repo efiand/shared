@@ -1,7 +1,7 @@
 import { properties } from "./stylelint-properties-order.js";
 
 /** @type {(options?: object) => import('stylelint').Config} */
-export const createStylelintConig = ({ useSorting = true } = {}) => {
+export const createStylelintConfig = ({ useSorting = true } = {}) => {
   const config = {
     extends: ["stylelint-config-standard"],
     overrides: [
@@ -82,4 +82,4 @@ export const createStylelintConig = ({ useSorting = true } = {}) => {
 };
 
 /** @type {import('stylelint').Config} */
-export const stylelintConfig = createStylelintConig();
+export const stylelintConfig = createStylelintConfig();

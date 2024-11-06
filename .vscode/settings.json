@@ -13,9 +13,9 @@
   },
   "eslint.format.enable": true,
   "eslint.lintTask.enable": true,
-  "eslint.validate": ["javascript", "vue"],
+  "eslint.validate": ["javascript", "svelte", "vue"],
   "files.associations": {
     "*.html": "twig"
   },
-  "stylelint.validate": ["scss", "vue"]
+  "stylelint.validate": ["scss", "svelte", "vue"]
 }
