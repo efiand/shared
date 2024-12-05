@@ -8,9 +8,8 @@ import pluginVue from "eslint-plugin-vue";
 import globals from "globals";
 import ts from "typescript-eslint";
 
-const { npm_lifecycle_event } = process.env;
-const strictMode =
-  npm_lifecycle_event.includes("build") || npm_lifecycle_event.includes("lint");
+const scriptName = process?.env?.npm_lifecycle_event || "";
+const strictMode = scriptName.includes("lint") || scriptName.includes("build");
 
 /** @type {import('eslint').Linter.Config[]} */
 export const eslintConfigs = [
